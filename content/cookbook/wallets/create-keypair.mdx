@@ -43,6 +43,16 @@ console.log("address:", keypair.publicKey.toBase58());
 ```
 
 ```rs !! title="Rust"
+use {solana_keypair::Keypair, solana_signer::Signer};
+fn main() {
+    let keypair = Keypair::new();
+    let address = keypair.pubkey();
+    println!("address: {address}")
+}
+
+```
+
+```rs !! title="Rust (solana_sdk)"
 use solana_sdk::{signature::Keypair, signer::Signer};
 
 fn main() {
