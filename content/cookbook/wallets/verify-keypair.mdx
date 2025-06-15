@@ -92,7 +92,7 @@ fn main() -> Result<()> {
     ];
     let public_key = pubkey!("24PNhTaNtomHhoy3fTRaMhAFCRj4uHqhZEEoWrKDbR5p");
 
-    let keypair = Keypair::from_bytes(&keypair_bytes)?;
+    let keypair = Keypair::try_from(keypair_bytes.as_slice())?;
     println!("{}", keypair.pubkey().eq(&public_key));
     Ok(())
 }
